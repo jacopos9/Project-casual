@@ -1,66 +1,206 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using js.SpacePlatformGame;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : Player //---> farlo derivare direttamente da player 
 {
-    Player player = new Player();
-    Rigidbody2D rb;
-    public Vector3 direction;
-    float speed = 100f;
-    float horizontalSpeed = 50f;
-    //ScreenLimit screenLimit;;
-    public bool touchGround = false;
+    #region variabili momentanee InputPc
 
+    Rigidbody2D rb;
+    [Range(0f,50f)][Tooltip("normalmente settato a 10")]
+    public float force;
+    [Range(0f,20f)] [Tooltip("normalmente settato a 5")]
+    public float horizontalForce;
+    public float maxSpeed;
+    public bool touchGround;
+
+    #endregion
+
+
+    public bool left = false;
+    public bool right = false;
+    public bool accelerationUp;
+
+    #region Test Variablese
+    public GameObject flagPizzeria;
+    public float maxVelocity = 10f;
+    public float actualSpeedY;
+    public GameObject firstLimit;
+    public GameObject secondLimit;
+    public GameObject thirdLimit;
+    public float timer = 0;
+    public bool startTimer;
+
+    #endregion
     private void Start()
     {
-        rb = GetComponentInChildren<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Accelerate()
+    #region PcInputs
+    public void Thrust()
     {
-        if (Input.GetKey(KeyCode.P))
-        {
-           
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            
-        }
-    }
-
-    public void Proposed1()
-    {
+        float xSpeed = force * Time.deltaTime;
+        Vector2 upDirection = new Vector2(0, xSpeed);
+        float yspeed = horizontalForce * Time.deltaTime;
+        Vector2 horizontalDirection = new Vector2(yspeed, 0);
       
 
-        float h = Input.GetAxis("Horizontal"); 
-        float v = Input.GetAxis("Vertical");
-        float yForce = v * speed * Time.deltaTime; 
-        Vector2 force = new Vector2(0,yForce); 
-        rb.AddForce(force);
-
-        float yforce = h * horizontalSpeed * Time.deltaTime;
-        Vector2 forceY = new Vector2(yforce, 0);
-        rb.AddForce(forceY);
-
-        if (touchGround)
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            speed = 0f;
+            rb.AddForce(upDirection);
         }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rb.AddForce(horizontalDirection);
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.AddForce(-horizontalDirection);
+        }
+
+        
+        if (!touchGround)
+        {
+            horizontalForce = 2f;
+        }
+        else horizontalForce = 0f;
     }
 
-    public void Proposed2()
+    // Option 2
+    void Thrust2() // meno quotata
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        float xSpeed = h * force * Time.deltaTime;
+        float ySpeed = v * horizontalForce * Time.deltaTime;
+        Vector2 upDirection = new Vector2(xSpeed, 0);
+        Vector3 hDirection = new Vector3(0, ySpeed);
+        rb.AddForce(hDirection);
+
+        if (!touchGround)
+        {
+            horizontalForce = 5f;
+        }
+        else horizontalForce = 0f;
+    }
+
+
+
+    #endregion
+
+    #region Mobile Inputs
+   
+    public void LeftDirection()
+    {
+        left = true;
+    }
+    public void LeftDirectionBrake()
+    {
+        left = false;
+    }
+    public void RightDirection()
+    {
+        right = true;
+    }
+    public void RightDirectionBrake()
+    {
+        right = false;
+    }
+    public void Acceleration()
+    {
+        accelerationUp = true;
+    }
+    public void Brake()
+    {
+        accelerationUp = false;
+    }
+
+    public void MovementThrust()
+    {
+        float ySpeed = force * Time.deltaTime;
+        float xSpeed = horizontalForce * Time.deltaTime;
+        Vector2 directionHorizontal = new Vector2(xSpeed, 0);
+        Vector2 directionUp = new Vector3(0, ySpeed);
+        
+        if (accelerationUp)
+        {
+            rb.AddForce(directionUp);
+           
+        }
+
+        if (left)
+        {
+            rb.AddForce(-directionHorizontal);
+        }
+
+        if (right)
+        {
+            rb.AddForce(directionHorizontal);
+        }
+
 
     }
 
+
+    public void TrustOption2()
+    {
+        // calcolare vettore di potenza
+
+        float ySpeed = force * Time.deltaTime; // velocità
+        float xSpeed = horizontalForce * Time.deltaTime; // velocità
+        Vector2 directionHorizontal = new Vector2(xSpeed, 0); // vettore di traslazione asse x
+        Vector2 directionUp = new Vector3(0, ySpeed);  // vettore di traslazione asse y
+
+
+
+
+        //actualSpeedY = rb.velocity.y;
+        /*
+        if(actualSpeedY >= maxVelocity)
+        {
+            actualSpeedY = maxVelocity;
+        }
+        */
+        
+
+        if (accelerationUp)
+        {
+            rb.AddForce(directionUp);
+
+        }
+        
+        if (left)
+        {
+            rb.AddForce(-directionHorizontal);
+        }
+
+
+        if (right)
+        {
+            rb.AddForce(directionHorizontal);
+        }
+
+    }
+
+    #endregion
+
+    #region Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Platform")
         {
             touchGround = true;
+        }
+
+        if (collision.gameObject.tag == "PizzeriaPlatform")
+        {
+            touchGround = true;
+            flagPizzeria.SetActive(true);
         }
     }
 
@@ -70,29 +210,28 @@ public class PlayerController : MonoBehaviour
         {
             touchGround = false;
         }
-    }
 
-
-    public void Update()
-    {
-       
-    }
-
-    public void FixedUpdate()
-    {
-        //fisica e comportamenti fisici
-        // Accelerate();
-        Proposed1();
-        //Proposed2();
-
-        //rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
-
-        if (touchGround)
+        if (collision.gameObject.tag == "PizzeriaPlatform")
         {
-          
+            touchGround = false;
+            flagPizzeria.SetActive(false);
         }
     }
 
 
+    #endregion
 
+    public void Update()
+    {
+        // Thrust();
+    }
+
+    public void FixedUpdate()
+    {
+         Thrust();
+        //Thrust2();
+        //MobileInputs();
+        //ThrustAcc();
+        //aggiungere fisica
+    }
 }
