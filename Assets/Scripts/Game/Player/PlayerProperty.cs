@@ -8,4 +8,6 @@ public class PlayerProperty
     public float horizontalSpeed { get; set; } // velocità orizzontale player
 
     // tutte le variabili che serviranno al player sottoforma di property
+
+    
 }

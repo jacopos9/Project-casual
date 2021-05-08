@@ -71,7 +71,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     }
 
     // Option 2
-    void Thrust2()
+    void Thrust2() // meno quotata
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -228,13 +228,10 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
     public void FixedUpdate()
     {
-        // Thrust();
+         Thrust();
         //Thrust2();
         //MobileInputs();
         //ThrustAcc();
-
-        TrustOption2();
-        //MovementThrust();
         //aggiungere fisica
     }
 }
