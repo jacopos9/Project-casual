@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class Player
+namespace js.SpacePlatformGame
 {
-    public float speedvertical;
-    public float speedHorizontal;
-    public float speedHorizontalX2;
-
-    // tutte le variabili che serviranno al player sottoforma di property
-
+    public class Player : MonoBehaviour
+    {
+        //classe generica base che si occupa del controller in modo più generico rispetto alla superclasse (player controller),
+        // che invece si occuperà di gestire il player specifico di questo gioco
+    }
 }
+
