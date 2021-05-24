@@ -31,11 +31,14 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public GameObject thirdLimit;
     public float timer = 0;
     public bool startTimer;
+    Animator Anim;
 
     #endregion
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Anim = GetComponent<Animator>(); // occhio agli spostamenti dell'oggetto
+        //Anim = GetComponentInParent<Animator>();
     }
 
     #region PcInputs
@@ -68,6 +71,11 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
             horizontalForce = 2f;
         }
         else horizontalForce = 0f;
+
+
+        Anim.SetFloat("Acceleration", Input.GetAxis("Vertical"));
+        // se serve in mobile input mettere in script
+        
     }
 
     // Option 2
@@ -155,18 +163,6 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         float xSpeed = horizontalForce * Time.deltaTime; // velocità
         Vector2 directionHorizontal = new Vector2(xSpeed, 0); // vettore di traslazione asse x
         Vector2 directionUp = new Vector3(0, ySpeed);  // vettore di traslazione asse y
-
-
-
-
-        //actualSpeedY = rb.velocity.y;
-        /*
-        if(actualSpeedY >= maxVelocity)
-        {
-            actualSpeedY = maxVelocity;
-        }
-        */
-        
 
         if (accelerationUp)
         {
