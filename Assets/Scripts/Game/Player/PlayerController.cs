@@ -7,31 +7,32 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 {
     #region variabili momentanee InputPc
 
-    Rigidbody2D rb;
     [Range(0f,50f)][Tooltip("normalmente settato a 10")]
     public float force;
     [Range(0f,20f)] [Tooltip("normalmente settato a 5")]
     public float horizontalForce;
     public float maxSpeed;
     public bool touchGround;
+    bool canMoving = false;
 
-    #endregion
-
+    Rigidbody2D rb;
+    Animator Anim;
 
     public bool left = false;
     public bool right = false;
     public bool accelerationUp;
 
+    #endregion
+
     #region Test Variablese
     public GameObject flagPizzeria;
-    public float maxVelocity = 10f;
-    public float actualSpeedY;
     public GameObject firstLimit;
     public GameObject secondLimit;
     public GameObject thirdLimit;
+    public float maxVelocity = 10f;
+    public float actualSpeedY;
     public float timer = 0;
     public bool startTimer;
-    Animator Anim;
 
     #endregion
     private void Start()
@@ -95,6 +96,8 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
             horizontalForce = 5f;
         }
         else horizontalForce = 0f;
+
+        
     }
 
 
@@ -122,13 +125,24 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public void Acceleration()
     {
         accelerationUp = true;
+        canMoving = true;
+
+        
     }
+
+    
+
     public void Brake()
     {
         accelerationUp = false;
+
+        if (accelerationUp == false)
+        {
+            canMoving = false;
+        }
     }
 
-    public void MovementThrust()
+    public void ThrustMobile() //Attualmente usata per il movimento mobile
     {
         float ySpeed = force * Time.deltaTime;
         float xSpeed = horizontalForce * Time.deltaTime;
@@ -151,6 +165,10 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
             rb.AddForce(directionHorizontal);
         }
 
+        //Anim.SetFloat("Acceleration", Input.GetAxis("Vertical"));
+        //Anim.SetFloat("Acceleration",directionUp.y);
+        //Debug.Log(directionUp);
+        Anim.SetBool("CanMoving", canMoving);
 
     }
 
@@ -180,6 +198,8 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         {
             rb.AddForce(directionHorizontal);
         }
+
+        Anim.SetFloat("Acceleration", Input.GetAxis("Vertical"));
 
     }
 
@@ -225,6 +245,8 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public void FixedUpdate()
     {
          Thrust();
+        ThrustMobile();
+        //TrustOption2();
         //Thrust2();
         //MobileInputs();
         //ThrustAcc();

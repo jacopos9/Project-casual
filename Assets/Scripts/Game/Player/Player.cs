@@ -6,6 +6,9 @@ namespace js.SpacePlatformGame
     {
         //classe generica base che si occupa del controller in modo più generico rispetto alla superclasse (player controller),
         // che invece si occuperà di gestire il player specifico di questo gioco
+
+        public float speed;
+
     }
 }
 
