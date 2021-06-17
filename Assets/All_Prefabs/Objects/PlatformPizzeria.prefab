@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7415413309909286450}
   - component: {fileID: 8728597052458258828}
   - component: {fileID: 1703212520095162918}
+  - component: {fileID: 6816458021036108961}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: PizzeriaPlatform
@@ -161,3 +162,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6816458021036108961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261358041372357814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06ae41482399084ab29a27df6c93457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOnPlatform: 0

@@ -216,7 +216,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         if (collision.gameObject.tag == "PizzeriaPlatform")
         {
             touchGround = true;
-            flagPizzeria.SetActive(true);
+            //flagPizzeria.SetActive(true);
         }
     }
 
@@ -224,13 +224,12 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     {
         if (collision.gameObject.tag == "Platform")
         {
-            touchGround = false;
+            touchGround = false; // rimouvere in futuro quando la pizzeria system funziona
         }
 
         if (collision.gameObject.tag == "PizzeriaPlatform")
         {
-            touchGround = false;
-            flagPizzeria.SetActive(false);
+            touchGround = false; // rimouvere in futuro quando la pizzeria system funziona
         }
     }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4756221176645808157}
   m_Layer: 0
   m_Name: CustomersPlatformType2
-  m_TagString: Untagged
+  m_TagString: CustomersPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7902006724850909989}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Untagged
+  m_TagString: CustomersPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

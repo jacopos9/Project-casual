@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4931873670680987324}
   - component: {fileID: 1890665448302690333}
   - component: {fileID: 4490220032234238202}
+  - component: {fileID: 9062572221317031725}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Pizzeria
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1cfab52115c636844bacd4ea806fcc2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c8f819018ced1b4ba8a521e184a066b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,6 +104,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &9062572221317031725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014416396669597464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089cbb9bb9f29b445b687b6dbf48c946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzeriaPlatform: {fileID: 0}
+  pizza: {fileID: 8316638626443838153, guid: 7bbbbc440f9f0574187fa5cf017ed674, type: 3}
+  courotineCanRun: 0
+  timeToPreparePizza: 3
+  SpawnPizzaPosition: {x: 0, y: 0}
+  SpawnPizzaPosition2: {x: -4, y: 3}
+  spawnPizzaPos: []
+  pizzaCounter: 0
+  preparationPizzaButton: {fileID: 0}
 --- !u!1 &9038816199094704537
 GameObject:
   m_ObjectHideFlags: 0
