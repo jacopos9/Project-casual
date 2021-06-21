@@ -103,6 +103,7 @@ MonoBehaviour:
   canCatchPizza: 1
   pizzaRotten: 0
   PizzaInInventory: 0
+  SpriteRottenPizza: {fileID: 21300000, guid: 09613eec29ef54f448d7ee2e0ed9d8c7, type: 3}
 --- !u!61 &2257820766028821225
 BoxCollider2D:
   m_ObjectHideFlags: 0

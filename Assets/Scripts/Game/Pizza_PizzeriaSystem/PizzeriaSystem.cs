@@ -20,10 +20,13 @@ public class PizzeriaSystem : MonoBehaviour
     public Transform buttonPosition;
 
     public Button preparationPizzaButton;
+    
+    TimerScripts timerScripts;
 
     public void Start()
     {
         pizzeriaPlatform = FindObjectOfType<PizzeriaPlatform>();
+        timerScripts = FindObjectOfType<TimerScripts>();
     }
 
     public void AppairButton()
@@ -31,6 +34,7 @@ public class PizzeriaSystem : MonoBehaviour
         if (pizzeriaPlatform.playerOnPlatform)
         {
             preparationPizzaButton.gameObject.SetActive(true);
+            timerScripts.image.gameObject.SetActive(true);
             
         }
         else preparationPizzaButton.gameObject.SetActive(false);
@@ -45,6 +49,7 @@ public class PizzeriaSystem : MonoBehaviour
          {
              courotineCanRun = true;
              yield return new WaitForSeconds(timeToPreparePizza);
+            //timerScripts.image.gameObject.SetActive(true);
 
              Instantiate(pizza, new Vector2(Random.Range(-3.5f, -3.0f),-2f), transform.rotation);
             // GameObject go = Instantiate(pizza, new Vector2(Random.Range(-3.5f, -3.0f), SpawnPizzaPosition.y), transform.rotation);
@@ -58,6 +63,11 @@ public class PizzeriaSystem : MonoBehaviour
         {
             // bloccare la coroutine
         }
+    }
+
+    public void AppairLoadingBar()
+    {
+
     }
 
     public void OnButtonClick()

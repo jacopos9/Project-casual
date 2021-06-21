@@ -9,7 +9,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
     [Range(0f,50f)][Tooltip("normalmente settato a 10")]
     public float force;
-    [Range(0f,20f)] [Tooltip("normalmente settato a 5")]
+    [Range(0f,20f)] [Tooltip("normalmente settato a 5 // se non funziona il cambio, guardare bene nel metodo ")]
     public float horizontalForce;
     public float maxSpeed;
     public bool touchGround;
@@ -69,7 +69,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         
         if (!touchGround)
         {
-            horizontalForce = 2f;
+            horizontalForce = 5f;
         }
         else horizontalForce = 0f;
 

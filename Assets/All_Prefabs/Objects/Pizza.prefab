@@ -159,6 +159,7 @@ MonoBehaviour:
   canCatchPizza: 1
   pizzaRotten: 0
   PizzaInInventory: 0
+  SpriteRottenPizza: {fileID: 0}
 --- !u!1 &8316638626443838153
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,3 +213,4 @@ MonoBehaviour:
   canCatchPizza: 1
   pizzaRotten: 0
   PizzaInInventory: 0
+  SpriteRottenPizza: {fileID: 21300000, guid: 09613eec29ef54f448d7ee2e0ed9d8c7, type: 3}

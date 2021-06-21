@@ -14,6 +14,7 @@ public class Pizza : MonoBehaviour
     public bool pizzaRotten; //
     // variabili da togliere poi
     public int PizzaInInventory = 0;
+    public Sprite SpriteRottenPizza;
 
 
     void Start()
@@ -30,7 +31,8 @@ public class Pizza : MonoBehaviour
 
         if(timeBeforeRotten >= rottenPizza)
         {
-            GetComponent<SpriteRenderer>().color = ColorRottenPizza;
+           // GetComponent<SpriteRenderer>().color = ColorRottenPizza;
+            GetComponent<SpriteRenderer>().sprite = SpriteRottenPizza;
         }
 
         if(timeBeforeRotten >= destroyPizza)
