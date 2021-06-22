@@ -9,6 +9,8 @@ TagManager:
   - PizzeriaPlatform
   - Pizza
   - CustomersPlatform
+  - Terrain
+  - Mountains
   layers:
   - Default
   - TransparentFX
