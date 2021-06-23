@@ -34,6 +34,13 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public float timer = 0;
     public bool startTimer;
 
+
+    public float maxScreenUp;
+    public float maxScreenLeft;
+    public float maxScreenRight;
+
+    
+
     #endregion
     private void Start()
     {
@@ -236,9 +243,33 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
     #endregion
 
+
+    public void ScreenLimit()
+    {
+        Vector2 position = transform.position;
+        
+        if(transform.position.y > maxScreenUp)
+        {
+            position.y = maxScreenUp;
+        }
+
+        if(transform.position.x < maxScreenLeft)
+        {
+            position.x = maxScreenLeft;
+        }
+
+        if(transform.position.x > maxScreenRight)
+        {
+            position.x = maxScreenRight;
+        }
+
+        transform.position = position;
+    }
+
     public void Update()
     {
         // Thrust();
+        ScreenLimit();
     }
 
     public void FixedUpdate()
