@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &402269658118630487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402269658118630481}
+  - component: {fileID: 402269658118630486}
+  - component: {fileID: 402269658118630480}
+  m_Layer: 0
+  m_Name: Mountains1sx
+  m_TagString: Mountains
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402269658118630481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402269658118630487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &402269658118630486
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402269658118630487}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 4278fb6db73a94b45a3f868733fe2d16, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 24.802656, y: 35.079998}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!68 &402269658118630480
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402269658118630487}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -12.411884, y: -12.866684}
+  - {x: -10.37634, y: -11.8184}
+  - {x: -9.919569, y: -11.549786}
+  - {x: -9.403324, y: -11.266822}
+  - {x: -8.975782, y: -10.9869175}
+  - {x: -8.474045, y: -10.514001}
+  - {x: -7.2434316, y: -9.515815}
+  - {x: -6.127067, y: -8.7846365}
+  - {x: -4.0841274, y: -8.322001}
+  - {x: -3.2801054, y: -8.240966}
+  - {x: -2.7553556, y: -8.115313}
+  - {x: -1.9528819, y: -7.6929827}
+  - {x: -1.0330184, y: -7.1035757}
+  - {x: -0.36605754, y: -6.738352}
+  - {x: 0.24988015, y: -6.196089}
+  - {x: 1.0009179, y: -5.8063927}
+  - {x: 1.352239, y: -5.805286}
+  - {x: 2.0683684, y: -6.13773}
+  - {x: 3.0703394, y: -6.658289}
+  - {x: 4.0002365, y: -7.5423994}
+  - {x: 4.4418225, y: -8.291643}
+  - {x: 4.858018, y: -8.889528}
+  - {x: 5.1821666, y: -9.277196}
+  - {x: 5.4170732, y: -9.493134}
+  - {x: 6.2818966, y: -9.839282}
+  - {x: 7.602385, y: -11.430038}
+  - {x: 8.341157, y: -12.499163}
+  - {x: 8.962976, y: -13.545257}
+  - {x: 9.290429, y: -14.015808}
+  - {x: 10.303447, y: -15.257814}
+  - {x: 11.81753, y: -17.162922}
+  - {x: 12.130389, y: -17.525246}
+  - {x: 9.562807, y: -17.539667}
+  - {x: 7.4443235, y: -17.523138}
+  - {x: -12.386278, y: -17.546776}
+  - {x: -12.414679, y: -13.675375}
+  - {x: -12.392697, y: -12.843678}

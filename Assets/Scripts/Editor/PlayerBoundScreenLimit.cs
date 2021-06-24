@@ -29,7 +29,6 @@ public class PlayerBoundScreenLimit : Editor
         Handles.DrawLine(screenLimit.downDx, screenLimit.downSx);
         Handles.DrawLine(screenLimit.downSx, screenLimit.upSx);
         Handles.DrawLine(screenLimit.upSx, screenLimit.upDx);
-        
     }
 
 

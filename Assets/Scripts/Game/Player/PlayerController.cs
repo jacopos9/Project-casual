@@ -9,7 +9,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
     [Range(0f,50f)][Tooltip("normalmente settato a 10")]
     public float force;
-    [Range(0f,20f)] [Tooltip("normalmente settato a 5")]
+    [Range(0f,20f)] [Tooltip("normalmente settato a 5 // se non funziona il cambio, guardare bene nel metodo ")]
     public float horizontalForce;
     public float maxSpeed;
     public bool touchGround;
@@ -33,6 +33,13 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public float actualSpeedY;
     public float timer = 0;
     public bool startTimer;
+
+
+    public float maxScreenUp;
+    public float maxScreenLeft;
+    public float maxScreenRight;
+
+    
 
     #endregion
     private void Start()
@@ -69,7 +76,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         
         if (!touchGround)
         {
-            horizontalForce = 2f;
+            horizontalForce = 5f;
         }
         else horizontalForce = 0f;
 
@@ -216,7 +223,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         if (collision.gameObject.tag == "PizzeriaPlatform")
         {
             touchGround = true;
-            flagPizzeria.SetActive(true);
+            //flagPizzeria.SetActive(true);
         }
     }
 
@@ -224,22 +231,45 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     {
         if (collision.gameObject.tag == "Platform")
         {
-            touchGround = false;
+            touchGround = false; // rimouvere in futuro quando la pizzeria system funziona
         }
 
         if (collision.gameObject.tag == "PizzeriaPlatform")
         {
-            touchGround = false;
-            flagPizzeria.SetActive(false);
+            touchGround = false; // rimouvere in futuro quando la pizzeria system funziona
         }
     }
 
 
     #endregion
 
+
+    public void ScreenLimit()
+    {
+        Vector2 position = transform.position;
+        
+        if(transform.position.y > maxScreenUp)
+        {
+            position.y = maxScreenUp;
+        }
+
+        if(transform.position.x < maxScreenLeft)
+        {
+            position.x = maxScreenLeft;
+        }
+
+        if(transform.position.x > maxScreenRight)
+        {
+            position.x = maxScreenRight;
+        }
+
+        transform.position = position;
+    }
+
     public void Update()
     {
         // Thrust();
+        ScreenLimit();
     }
 
     public void FixedUpdate()

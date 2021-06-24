@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4931873670680987324}
   - component: {fileID: 1890665448302690333}
   - component: {fileID: 4490220032234238202}
+  - component: {fileID: 9062572221317031725}
+  - component: {fileID: 8338993993670489564}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Pizzeria
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9014416396669597464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2406397550242136840}
   m_RootOrder: 0
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1cfab52115c636844bacd4ea806fcc2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c8f819018ced1b4ba8a521e184a066b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,6 +105,85 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &9062572221317031725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014416396669597464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089cbb9bb9f29b445b687b6dbf48c946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzeriaPlatform: {fileID: 0}
+  pizza: {fileID: 8316638626443838153, guid: 7bbbbc440f9f0574187fa5cf017ed674, type: 3}
+  courotineCanRun: 0
+  timeToPreparePizza: 3
+  SpawnPizzaPosition: {x: 0, y: 0}
+  SpawnPizzaPosition2: {x: -4, y: 3}
+  spawnPizzaPos: []
+  pizzaCounter: 0
+  buttonPosition: {fileID: 0}
+  preparationPizzaButton: {fileID: 0}
+--- !u!68 &8338993993670489564
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014416396669597464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.8067546, y: -11.186213}
+  - {x: -7.8366423, y: -10.305273}
+  - {x: -10.482943, y: -8.3919935}
+  - {x: -11.702387, y: -8.195457}
+  - {x: -12.46378, y: -7.308291}
+  - {x: -12.131408, y: -6.067934}
+  - {x: -12.344577, y: -5.6174474}
+  - {x: -14.317799, y: -5.701193}
+  - {x: -14.787601, y: -5.298778}
+  - {x: -14.0618725, y: -4.3832107}
+  - {x: -13.167397, y: -3.6215036}
+  - {x: -13.449047, y: -1.7303376}
+  - {x: -13.935812, y: -2.566866}
+  - {x: -14.789302, y: -2.6994672}
+  - {x: -15.690858, y: -2.1574259}
+  - {x: -17.208141, y: -0.4187975}
+  - {x: -18.58976, y: 3.2610993}
+  - {x: -18.77365, y: 6.339231}
+  - {x: -19.87933, y: 9.716866}
+  - {x: -17.725979, y: 10.387411}
+  - {x: -17.518501, y: 11.111076}
+  - {x: -10.582072, y: 13.215055}
+  - {x: -9.652958, y: 13.385642}
+  - {x: -9.629749, y: 12.914838}
+  - {x: -5.81909, y: 14.294479}
+  - {x: -4.783817, y: 11.895476}
+  - {x: -2.2795968, y: 8.850149}
+  - {x: -1.3187386, y: 5.9838796}
+  - {x: -0.97092915, y: 2.7853649}
+  - {x: -0.117592335, y: -0.038865566}
+  - {x: 2.5918784, y: 1.6719993}
+  - {x: 9.98872, y: 1.8204323}
+  - {x: 12.769472, y: -0.21040025}
+  - {x: 12.882915, y: -1.0972284}
+  - {x: 15.295722, y: -2.1197758}
+  - {x: 16.57538, y: -3.1805403}
+  - {x: 17.505785, y: -4.381084}
+  - {x: 18.081001, y: -5.7215667}
+  - {x: 18.41217, y: -7.7313957}
+  - {x: 18.603817, y: -8.3966875}
+  - {x: -5.1371956, y: -11.138384}
 --- !u!1 &9038816199094704537
 GameObject:
   m_ObjectHideFlags: 0
