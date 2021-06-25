@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddPizzaInBox() //<-- se crea problemi togliere il parametros // forse cambiare e mettere in uno scripts ui
+    public void AddPizzaInBox() //<-- se crea problemi togliere il parametros // forse cambiare e mettere in uno script ui
     {
         PizzaInBox += 1;
     }
@@ -39,7 +39,4 @@ public class GameManager : MonoBehaviour
     }
 
     //public void RestartScene() { }
-
-
-
 }

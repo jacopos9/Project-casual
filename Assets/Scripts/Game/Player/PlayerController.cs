@@ -15,6 +15,8 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public bool touchGround;
     bool canMoving = false;
 
+    //public Player player = new Player(10);
+
     Rigidbody2D rb;
     Animator Anim;
 

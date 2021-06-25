@@ -20,6 +20,7 @@ public class PizzeriaSystem : MonoBehaviour
     public Transform buttonPosition;
 
     public Button preparationPizzaButton;
+    public GameObject buttonPrepare;
     
     TimerScripts timerScripts;
 
@@ -27,6 +28,10 @@ public class PizzeriaSystem : MonoBehaviour
     {
         pizzeriaPlatform = FindObjectOfType<PizzeriaPlatform>();
         timerScripts = FindObjectOfType<TimerScripts>();
+        //GameObject button = GameObject.Find("Preparation_Pizza_Button");
+        //Vector2 pos = button.transform.position;
+        //pos.x -= 10f;
+        //button.transform.position = pos;
     }
 
     public void AppairButton()
@@ -34,12 +39,19 @@ public class PizzeriaSystem : MonoBehaviour
         if (pizzeriaPlatform.playerOnPlatform)
         {
             preparationPizzaButton.gameObject.SetActive(true);
-            timerScripts.image.gameObject.SetActive(true);
+            // timerScripts.image.gameObject.SetActive(true);
+           // preparationPizzaButton.transform.position = new Vector2(10f, 0);
             
         }
         else preparationPizzaButton.gameObject.SetActive(false);
 
         //preparationPizzaButton.gameObject.transform.position = buttonPosition.position
+
+       // Vector2 pos = buttonPrepare.transform.position;
+
+       // pos.x = 0f;
+       // buttonPrepare.transform.position = pos;
+
     }
 
     public IEnumerator PreparingPizza()

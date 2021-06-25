@@ -20,12 +20,11 @@ public class ScreenLimit : MonoBehaviour
 
     private void Start()
     {
-       /*
+      
         dx = GetComponentInChildren<BoxCollider2D>();
         sx = GetComponentInChildren<BoxCollider2D>();
         up = GetComponentInChildren<BoxCollider2D>();
         down = GetComponentInChildren<BoxCollider2D>();
-       */
     }
 
 

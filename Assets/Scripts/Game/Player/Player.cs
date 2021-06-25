@@ -9,6 +9,15 @@ namespace js.SpacePlatformGame
 
         public float speed;
 
+        public float horizontalSpeed { get; set; }
+
+        /*
+        public Player(float p_horizontalSpeed)
+        {
+            horizontalSpeed = p_horizontalSpeed;
+        }
+        */
+
     }
 }
 
