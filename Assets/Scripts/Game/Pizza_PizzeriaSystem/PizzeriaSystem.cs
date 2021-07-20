@@ -19,10 +19,19 @@ public class PizzeriaSystem : MonoBehaviour
     public int pizzaCounter = 0;
     public Transform buttonPosition;
 
+    public int pizzaPrepareCounter = 0;
+    public float timeBetweenTwoPizza = 0f;
+
     public Button preparationPizzaButton;
     public GameObject buttonPrepare;
     
     TimerScripts timerScripts;
+
+
+    /// <summary>
+    /// TODO : mettere un limitatore alla preparazione pizze
+    /// se le pizze non vengono raccolte ma restano sulla piattaforma si possono cucinare all'infinito
+    /// </summary>
 
     public void Start()
     {
@@ -64,6 +73,7 @@ public class PizzeriaSystem : MonoBehaviour
             //timerScripts.image.gameObject.SetActive(true);
 
              Instantiate(pizza, new Vector2(Random.Range(-3.5f, -3.0f),-2f), transform.rotation);
+             pizzaPrepareCounter += +1;
             // GameObject go = Instantiate(pizza, new Vector2(Random.Range(-3.5f, -3.0f), SpawnPizzaPosition.y), transform.rotation);
 
              yield return new WaitForSeconds(.5f);
@@ -98,6 +108,31 @@ public class PizzeriaSystem : MonoBehaviour
         {
             Debug.Log("sup");
         }
+
+        #region InTestings
+
+        /*
+        if (pizzaPrepareCounter>= 2)
+        {
+            Debug.Log("superato il limite");
+            // stop coroutine 
+            //  fa partire il timer che impedisce di far preparare
+            // restart coroutine
+
+            StopCoroutine("PreparingPizza");
+            timeBetweenTwoPizza += Time.deltaTime;
+
+            if(timeBetweenTwoPizza >= 15f)
+            {
+                timeBetweenTwoPizza = 0f;
+                pizzaPrepareCounter = 0;
+                StartCoroutine("PreparingPizza");
+            }
+
+        }
+        */
+
+        #endregion
     }
 
 }
