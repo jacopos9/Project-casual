@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// classe che si occupa della gestione del cliente
+/// </summary>
 public class Custormers : MonoBehaviour
 {
     public float timeToDisactive = 3f;

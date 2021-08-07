@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f3340f717e2d44e81e97fa19bdf575, type: 3}
-  m_Name: Alien
+  m_Script: {fileID: 11500000, guid: 0e9ad15b1f0e21b4ba5b3a4db80c6a82, type: 3}
+  m_Name: Alien2
   m_EditorClassIdentifier: 
-  name: 
-  orderRequest: 0
-  timeToDisable: 30
-  obj: {fileID: 2123087147779388182, guid: e38f94e372eb2a34dac19c4468524c59, type: 3}
+  name: Alien2
+  order: 0
+  timeActive: 30
+  position: {x: 0, y: 0}
