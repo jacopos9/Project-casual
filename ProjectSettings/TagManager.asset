@@ -11,6 +11,9 @@ TagManager:
   - CustomersPlatform
   - Terrain
   - Mountains
+  - Customer
+  - CustomerSx
+  - CustomerDx
   layers:
   - Default
   - TransparentFX

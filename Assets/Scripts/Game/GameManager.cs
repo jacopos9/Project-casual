@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RemovePizzaFromBox(int pizzas)
+    {
+       
+    }
+
     
     public void IncreaseCoins(int coin)
     {
@@ -72,12 +78,10 @@ public class GameManager : MonoBehaviour
     
     public void GameOver()
     {
-        // chiamata quando il generic timer scade
-        if(genericTimer <= 0f)   // <---- file temporaneo
+        if(genericTimer <= 0f)
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene(1);
         }
-
     }
 
     public void Pause()
@@ -92,16 +96,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(PizzaInBox);
         TimeLeft();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Pause();
-        }
-
-        //GameOver();
-        
     }
 
     

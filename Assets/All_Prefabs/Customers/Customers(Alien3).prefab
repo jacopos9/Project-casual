@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2997030125068699725}
   - component: {fileID: 2997030125068699724}
   - component: {fileID: 2140209084685654181}
+  - component: {fileID: 1330718693023410554}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Untagged
+  m_TagString: CustomerSx
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +109,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.16, y: 23.5}
   m_EdgeRadius: 0
+--- !u!50 &1330718693023410554
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997030125068699726}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2997030125237578839
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2997030125237578839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -44.61, y: 49.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2997030125068699725}
@@ -152,3 +174,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd20af711ff24346ada546f63de9000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDisactive: 3
+  DEBUGTIME: 0

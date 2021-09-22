@@ -40,13 +40,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140518707687347230}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6012f8a52b15b9a4db5345b0252d3b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boxColl: {fileID: 0}
   buttonDelivery: {fileID: 0}
+  playerInRadius: 0
+  customersInRadius: 0
+  canDelivery: 0
+  delivered: 0
+  timerStopMoney: 0
 --- !u!1 &4009118423446451641
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +172,7 @@ GameObject:
   - component: {fileID: 8684266678267073290}
   - component: {fileID: 8756696049315507655}
   - component: {fileID: 4255423552274601251}
+  - component: {fileID: 4317369978010432115}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -227,7 +233,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ea2a556933b32c746afd675f35fef90a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76fde9933d1e4be40abbd0cfe0bac7d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -281,3 +287,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxColl: {fileID: 0}
   buttonDelivery: {fileID: 0}
+  playerInRadius: 0
+  customersInRadius: 0
+  canDelivery: 0
+  delivered: 0
+  timerStopMoney: 0
+--- !u!58 &4317369978010432115
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9150063307390858262}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 10.04}
+  serializedVersion: 2
+  m_Radius: 10

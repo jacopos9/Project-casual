@@ -84,7 +84,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
 
         Anim.SetFloat("Acceleration", Input.GetAxis("Vertical"));
-        // se serve in mobile input mettere in script
+
         
     }
 
@@ -135,11 +135,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     {
         accelerationUp = true;
         canMoving = true;
-
-        
     }
-
-    
 
     public void Brake()
     {
@@ -225,7 +221,6 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
         if (collision.gameObject.tag == "PizzeriaPlatform")
         {
             touchGround = true;
-            //flagPizzeria.SetActive(true);
         }
     }
 
@@ -245,7 +240,9 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
     #endregion
 
-
+    /// <summary>
+    /// mettere nello script dello screen limit
+    /// </summary>
     public void ScreenLimit()
     {
         Vector2 position = transform.position;

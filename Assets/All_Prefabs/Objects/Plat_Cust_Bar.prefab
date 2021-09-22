@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1870756760569570824}
   - component: {fileID: 4906076522464736521}
   - component: {fileID: 8307774910054657446}
+  - component: {fileID: 2702626668509680432}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: CustomersPlatform
@@ -144,6 +145,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxColl: {fileID: 0}
+  buttonDelivery: {fileID: 0}
+  playerInRadius: 0
+  customersInRadius: 0
+  canDelivery: 0
+--- !u!58 &2702626668509680432
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870756760569570823}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.014214516, y: 20.130001}
+  serializedVersion: 2
+  m_Radius: 12.082107
 --- !u!1 &1870756760932250510
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,3 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxColl: {fileID: 0}
+  buttonDelivery: {fileID: 0}
+  playerInRadius: 0
+  customersInRadius: 0
+  canDelivery: 0

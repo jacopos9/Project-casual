@@ -72,7 +72,7 @@ public class PizzeriaSystem : MonoBehaviour
              yield return new WaitForSeconds(timeToPreparePizza);
             //timerScripts.image.gameObject.SetActive(true);
 
-             Instantiate(pizza, new Vector2(Random.Range(-3.5f, -3.0f),-2f), transform.rotation);
+             Instantiate(pizza, new Vector2(Random.Range(-3f, -3.0f),.10f), transform.rotation);
              pizzaPrepareCounter += +1;
             // GameObject go = Instantiate(pizza, new Vector2(Random.Range(-3.5f, -3.0f), SpawnPizzaPosition.y), transform.rotation);
 

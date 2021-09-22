@@ -41,17 +41,14 @@ public class ScreenLimit : MonoBehaviour
        // BoxCollider2D varColl;
     }
 
-    void All()
+    void AllCollider()
     {
         //down.size = spacing;
-
-     
-
     }
 
     private void Update()
     {
-        All();
+        AllCollider();
         
     }
 
