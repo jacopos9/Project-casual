@@ -16,8 +16,6 @@ public class ScreenLimit : MonoBehaviour
    public Vector2 downDx;
    public Vector2 downSx;
    public Vector2 upSx;
-
-
     private void Start()
     {
       
@@ -26,7 +24,6 @@ public class ScreenLimit : MonoBehaviour
         up = GetComponentInChildren<BoxCollider2D>();
         down = GetComponentInChildren<BoxCollider2D>();
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -51,6 +48,5 @@ public class ScreenLimit : MonoBehaviour
         AllCollider();
         
     }
-
 
 }

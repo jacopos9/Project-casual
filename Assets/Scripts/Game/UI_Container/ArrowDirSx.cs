@@ -1,19 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ArrowDirSx : MonoBehaviour // questo è dx in realta,cambiare il nome della classe
 {
     public Image arrowSx;
-    public bool sx;
+    bool sx;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "CustomerSx")
         {
-
             sx = true;
         }
     }
@@ -22,7 +19,6 @@ public class ArrowDirSx : MonoBehaviour // questo è dx in realta,cambiare il no
     {
         if (collision.gameObject.tag == "CustomerSx")
         {
-
             sx = false;
         }
     }

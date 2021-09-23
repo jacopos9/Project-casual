@@ -7,11 +7,11 @@ public class Coins_Ui : MonoBehaviour
 
     private void Start()
     {
-        coins.text = "Coins: " + GameManager.coins.ToString();
+        coins.text = "" + GameManager.coins.ToString();
     }
 
     private void Update()
     {
-        coins.text = "Coins: " + GameManager.coins.ToString();
+        coins.text = "" + GameManager.coins.ToString();
     }
 }

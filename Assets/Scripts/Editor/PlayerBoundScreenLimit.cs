@@ -6,10 +6,10 @@ public class PlayerBoundScreenLimit : Editor
 {
     /// <summary>
     /// usati per tener conto della dimensione totale man mano si posizionano i background,
-    /// in modo da non andare a misurare ogni volta con i gameObject
+    /// in modo da non andare a misurare ogni volta
     /// </summary>
     /// 
-    Vector2 dira;
+    Vector2 dir;
    
     public override void OnInspectorGUI()
     {
@@ -19,8 +19,6 @@ public class PlayerBoundScreenLimit : Editor
 
         //Handles.DrawLine(screenLimit.upDx, screenLimit.downDx);
     }
-
-
     public void OnSceneGUI()
     {
         ScreenLimit screenLimit = (ScreenLimit)target;

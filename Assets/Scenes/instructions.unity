@@ -660,16 +660,16 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Welcome to Pizza Valley 4021, prepare and deliver pizzas to all the inhabitants
     of the planet in the shortest time possible. \r\n\rThe delivery will be made
-    automatically staying <> seconds on the customer\u2019s platform.\r\n\rYou can
+    automatically staying 3 seconds on the customer\u2019s platform.\r\n\rYou can
     only land on the platforms, if you touch the mountains or any other object in
     the scene, the game will end.\r\n\rYou can prepare only two pizzas at time but
     hurry to put the pizzas in the backpack or they\u2019ll get moldy.\r\n\rEvery
-    <> seconds a new customer will appear and will wait a maximum of 30 seconds,
+    10 seconds a new customer will appear and will wait a maximum of 15 seconds,
     the less time it takes the more money you\u2019ll get.\r\n\rEvery time that a
-    customer is satisfied the timer of the game will be increased by 15 seconds.\r\n\rWhen
-    the time runs out the game ends.\r\n\rMove in the valley by using the buttons
-    at the bottom left.\r\n\rPlay and replay and try to smash your record to conquer
-    this new planet with the best food in the universe!"
+    customer is satisfied the timer of the game will be increased.\n\rWhen the time
+    runs out the game ends.\r\n\rMove in the valley by using the buttons at the bottom
+    left.\r\n\rPlay and replay and try to smash your record to conquer this new planet
+    with the best food in the universe!"
 --- !u!222 &1133903641
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// classe che si occupa del comportamento della pizza 
+/// classe che si occupa del comportamento del GameObject pizza, da qundo viene prodotta
+/// fino alla eliminazione
 /// </summary>
 public class Pizza : MonoBehaviour
 {
-    public PizzeriaPlatform pizzeriaPlatform;
-    public float timeBeforeRotten = 0f;
-    public float timeRottenPizza = 3f;
-    public float destroyPizza = 10f;
-    public Color ColorRottenPizza = Color.green;
-    public bool canCatchPizza = true;
-    public bool pizzaRotten; //
-    // variabili da togliere poi
+    float timeBeforeRotten = 0f;
+    float timeRottenPizza = 3f;
+    float destroyPizza = 10f;
+    bool canCatchPizza = true;
+    Color RottenPizza = Color.green;
     public Sprite SpriteRottenPizza;
+    PizzeriaPlatform pizzeriaPlatform;
 
 
     void Start()
@@ -21,9 +20,9 @@ public class Pizza : MonoBehaviour
         pizzeriaPlatform = FindObjectOfType<PizzeriaPlatform>();
     }
 
-    #region PRIVATE API 
-    //CAMBIO DELLA PIZZA 
-
+   /// <summary>
+   /// funzione usata per cambiare sprite quando passa un tot di tempo
+   /// </summary>
     private void ChangeColorRottenPizza()
     {
         timeBeforeRotten += Time.deltaTime;
@@ -48,31 +47,14 @@ public class Pizza : MonoBehaviour
             {
                 Destroy(gameObject);
                 GameManager.instance.AddPizzaInBox();
-                //GameManager.instance.IncreaseCoins(50);
                 GameManager.instance.IncreaseGenericTimer();
             }
         }
     }
-
-    public void TestTouchMobile()
-    {
-         
-    }
-
     private void CatchPizza()
     {
-        /*
-         if (pizzeriaPlatform.playerOnPlatform)
-         {
-             if (Input.GetMouseButton(0))
-             {
-                 Destroy(gameObject);
-             }
-         }
-        */
         if (Input.GetMouseButton(0))
         {
-            //  Destroy(gameObject);
             if (canCatchPizza)
             {
                 Destroy(gameObject);
@@ -86,15 +68,6 @@ public class Pizza : MonoBehaviour
         else canCatchPizza = false;
 
     }
-
-   
-
-    #endregion
-
-    #region PUBLIC API
-
-    #endregion
-
     private void Update()
     {
         ChangeColorRottenPizza();
@@ -106,9 +79,5 @@ public class Pizza : MonoBehaviour
         }
         else canCatchPizza = false;
 
-        #region InputTouch
-        #endregion
     }
-
-
 }

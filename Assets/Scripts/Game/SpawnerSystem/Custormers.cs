@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -7,9 +6,10 @@ using UnityEngine;
 /// </summary>
 public class Custormers : MonoBehaviour
 {
-    public float timeToDisactive = 300f;
+    float timeToDisactive = 15f;
     public float DEBUGTIME = 0f;
     public CustomersPlatform customersPlatform;
+    public bool isActive = true;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class Custormers : MonoBehaviour
     {
         customersPlatform = FindObjectOfType<CustomersPlatform>();
         StartCoroutine("DisableCustomers");
-        
+        isActive = true;
     }
 
     public void DisableObject()
@@ -32,10 +32,16 @@ public class Custormers : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToDisactive);
         gameObject.SetActive(false);
+        isActive = false;
     }
 
     public void Update()
     {
         DEBUGTIME -= Time.deltaTime;
+
+        if (isActive == false)
+        {
+            DEBUGTIME = 0f;
+        }
     }
 }

@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// classe che gestisce la piattaforma della pizzeria
 /// avendo il booleano "playerOnPlatform" gestisce e segna se il player è sulla piattafoma o meno
-/// questo booleano sarà poi richiesto da altri scripts per verificare certe condizioni 
+/// questo booleano sarà poi richiesto da altri scripts per verificare determinate condizioni 
 /// </summary>
 public class PizzeriaPlatform : MonoBehaviour
 {
@@ -18,7 +16,6 @@ public class PizzeriaPlatform : MonoBehaviour
 
         }
     }
-
     public void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -26,7 +23,6 @@ public class PizzeriaPlatform : MonoBehaviour
             playerOnPlatform = true;
         }
     }
-
     public void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")

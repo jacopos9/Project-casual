@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static int PizzaInBox; // richiamato per gestire le pizze
-    public static float genericTimer; // richiamato in ui 
-    public static int coins; // richiamato per incrementare i soldi
+    public static int PizzaInBox;
+    public static float genericTimer;
+    public static int coins;
     public static GameManager instance; //singleton
 
     public static int maxPizzaInBox = 10;
@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(transform.root.gameObject); // <------ potrebbe dare problemi 
+            //DontDestroyOnLoad(transform.root.gameObject); // <------ potrebbe dare problemi 
         }
         
         else
         {
-            Destroy(transform.root.gameObject);
+           // Destroy(transform.root.gameObject);
             return;
         }
     }
@@ -31,16 +31,18 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         genericTimer = 30f;
+        PizzaInBox = 0;
+        coins = 0;
     }
 
-    public void AddPizzaInBox() //<-- se crea problemi togliere il parametros // forse cambiare e mettere in uno script ui
+    public void AddPizzaInBox() 
     {
         PizzaInBox += 1;
     }
 
-    public void RemovePizzaInBox() //<---- richiamata quando il giocatore schiaccerà il pulsante cosegna
+    public void RemovePizzaInBox() 
     {
-        PizzaInBox -= 1;  // <--- sostituta poi dalla variabile intera della richiesta del cliente
+        PizzaInBox -= 1;  
 
         if(PizzaInBox <= minPizzaInBox)
         {
@@ -48,12 +50,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RemovePizzaFromBox(int pizzas)
-    {
-       
-    }
-
-    
     public void IncreaseCoins(int coin)
     {
         //coins += 100;
@@ -73,15 +69,15 @@ public class GameManager : MonoBehaviour
     public void TimeLeft()
     {
         genericTimer -= Time.deltaTime;
-    }
 
-    
-    public void GameOver()
-    {
-        if(genericTimer <= 0f)
+        if(genericTimer<= 0f)
         {
             SceneManager.LoadScene(1);
         }
+    }
+    public void GameOver()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void Pause()

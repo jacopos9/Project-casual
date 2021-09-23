@@ -7,19 +7,11 @@ public class PizzaInBoxUi : MonoBehaviour
 
     public void Start()
     {
-        pizzeInBox.text = "pizze: " + GameManager.PizzaInBox.ToString();
+        pizzeInBox.text = "" + GameManager.PizzaInBox.ToString();
     }
-
-   /*
-    public void AddPizzaInBox()
-    {
-        pizzeInBox.text = GameManager.PizzaInBox.ToString() + "Pizze Attuali : ";
-    }
-   */
-
     public void Update()
     {
-        pizzeInBox.text = "pizze: " + GameManager.PizzaInBox.ToString();
+        pizzeInBox.text = "" + GameManager.PizzaInBox.ToString();
     }
 
 }

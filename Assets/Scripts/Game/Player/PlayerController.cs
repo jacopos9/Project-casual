@@ -3,7 +3,7 @@ using js.SpacePlatformGame;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class PlayerController : Player //---> farlo derivare direttamente da player 
+public class PlayerController : Player //---> farlo derivare direttamente da player prossimamente quando il gioco sarà ripreso 
 {
     #region variabili momentanee InputPc
 
@@ -40,8 +40,6 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     public float maxScreenUp;
     public float maxScreenLeft;
     public float maxScreenRight;
-
-    
 
     #endregion
     private void Start()
@@ -228,12 +226,12 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     {
         if (collision.gameObject.tag == "Platform")
         {
-            touchGround = false; // rimouvere in futuro quando la pizzeria system funziona
+            touchGround = false;
         }
 
         if (collision.gameObject.tag == "PizzeriaPlatform")
         {
-            touchGround = false; // rimouvere in futuro quando la pizzeria system funziona
+            touchGround = false;
         }
     }
 
@@ -241,7 +239,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
     #endregion
 
     /// <summary>
-    /// mettere nello script dello screen limit
+    /// mettere nello script dello screen limit, solo per testing
     /// </summary>
     public void ScreenLimit()
     {
@@ -273,12 +271,7 @@ public class PlayerController : Player //---> farlo derivare direttamente da pla
 
     public void FixedUpdate()
     {
-         Thrust();
+        Thrust();
         ThrustMobile();
-        //TrustOption2();
-        //Thrust2();
-        //MobileInputs();
-        //ThrustAcc();
-        //aggiungere fisica
     }
 }

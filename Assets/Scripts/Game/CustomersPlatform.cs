@@ -4,20 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// gestisce il comportamento di ogni singola piattaforma dei clienti
+/// gestisce il comportamento di ogni singola piattaforma dei clienti e gestisce anche il delivery senza creare un altro scripts
 /// box collider
 /// </summary>
 public class CustomersPlatform : MonoBehaviour
 {
-    
-    /// <summary>
-    ///  TODO: togliere i bottoni
-    /// importare il sistema di delivery
-    /// </summary>
-    /// mettere il collider alle piattaforme per detectare il trigger del customers e il player
-    
+  
     public BoxCollider2D boxColl;
-    public Button buttonDelivery;
     public bool playerInRadius = false;
     public bool customersInRadius = false;
     public bool canDelivery = false;
@@ -35,13 +28,6 @@ public class CustomersPlatform : MonoBehaviour
         gameManager = GetComponent<GameManager>();
 
     }
-
-    /// <summary>
-    /// metodo usato per controllare se ce il cliente e il player per eseguire la transazione
-    /// controllare anche se ci sono le pizze nello zaino (fondamentale)
-    /// </summary>
-    /// <param name="collision"></param>
-    /// ricorddare di mettere il tag e il rigidbody al child anche
 
     #region competenza Platform 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -110,6 +96,7 @@ public class CustomersPlatform : MonoBehaviour
     #endregion
 
     #region DeliverySystem only for testing
+    
     public IEnumerator Delivery()
     {
         yield return new WaitForSeconds(3f);
@@ -120,7 +107,7 @@ public class CustomersPlatform : MonoBehaviour
             delivered = true;
         }
 
-        if(GameManager.PizzaInBox == 2)   // <--- aggiustare meglio
+        if(GameManager.PizzaInBox == 2)
         {
             GameManager.PizzaInBox -= 1;
         }
@@ -160,5 +147,7 @@ public class CustomersPlatform : MonoBehaviour
             StartCoroutine("IncreaseMoneyAndTime");
         }
     }
+    
+    
     #endregion
 }

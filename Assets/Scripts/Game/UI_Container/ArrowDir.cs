@@ -32,14 +32,12 @@ public class ArrowDir : MonoBehaviour
         if (collision.gameObject.tag == "CustomerSx")
         {
             sx = false;
-            Debug.Log("uscito sinistra");
         }
 
         if (collision.gameObject.tag == "CustomerDx")
         {
 
             dx = false;
-            Debug.Log("uscito destra");
         }
     }
 
